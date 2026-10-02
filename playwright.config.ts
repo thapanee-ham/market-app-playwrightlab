@@ -15,17 +15,17 @@ export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
 
-  use: {
-baseURL: 'http://127.0.0.1:5173',
-trace: 'on-first-retry',
-},
+// use: {
+//   baseURL: 'http://127.0.0.1:5173',
+//   trace: 'on-first-retry',
+//   },
 
 webServer: {
-command: 'npm run dev -- --host 0.0.0.0',
-url: 'http://127.0.0.1:5173',
-reuseExistingServer: !process.env.CI,
-timeout: 120 * 1000,
-},
+  command: 'npm run dev -- --host 0.0.0.0',
+  url: 'http://127.0.0.1:5173',
+  reuseExistingServer: !process.env.CI,
+  timeout: 120 * 1000,
+  },
 
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -38,6 +38,7 @@ timeout: 120 * 1000,
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    baseURL: 'http://127.0.0.1:5173',
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
